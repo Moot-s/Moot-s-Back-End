@@ -369,6 +369,56 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiEmotionEmotion extends Struct.CollectionTypeSchema {
+  collectionName: 'emotions';
+  info: {
+    displayName: 'Emotion';
+    pluralName: 'emotions';
+    singularName: 'emotion';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    createdOn: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    emotions: Schema.Attribute.Enumeration<
+      [
+        'ANGRY',
+        'SAD',
+        'CALM',
+        'WORRIED',
+        'HAPPY',
+        'EMBARRASSED',
+        'UNCOMFORTABLE',
+        'CONFUSED',
+        'BORED',
+        'EXCITED',
+        'RELAXED',
+      ]
+    > &
+      Schema.Attribute.Required;
+    entry: Schema.Attribute.UID & Schema.Attribute.Required;
+    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::emotion.emotion'
+    > &
+      Schema.Attribute.Private;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    updatedOn: Schema.Attribute.DateTime;
+    user: Schema.Attribute.Relation<
+      'oneToOne',
+      'plugin::users-permissions.user'
+    >;
+  };
+}
+
 export interface PluginContentReleasesRelease
   extends Struct.CollectionTypeSchema {
   collectionName: 'strapi_releases';
@@ -878,6 +928,7 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::emotion.emotion': ApiEmotionEmotion;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;
