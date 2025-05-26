@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-04-12T08:10:10.487Z"
+    "x-generation-date": "2025-05-26T16:04:15.654Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2005,8 +2005,7 @@
           "data": {
             "required": [
               "emotions",
-              "createdOn",
-              "entry"
+              "emotionDay"
             ],
             "type": "object",
             "properties": {
@@ -2026,16 +2025,9 @@
                   "RELAXED"
                 ]
               },
-              "createdOn": {
+              "emotionDay": {
                 "type": "string",
-                "format": "date-time"
-              },
-              "updatedOn": {
-                "type": "string",
-                "format": "date-time"
-              },
-              "entry": {
-                "type": "string"
+                "format": "date"
               },
               "user": {
                 "oneOf": [
@@ -2108,8 +2100,7 @@
         "type": "object",
         "required": [
           "emotions",
-          "createdOn",
-          "entry"
+          "emotionDay"
         ],
         "properties": {
           "id": {
@@ -2134,16 +2125,9 @@
               "RELAXED"
             ]
           },
-          "createdOn": {
+          "emotionDay": {
             "type": "string",
-            "format": "date-time"
-          },
-          "updatedOn": {
-            "type": "string",
-            "format": "date-time"
-          },
-          "entry": {
-            "type": "string"
+            "format": "date"
           },
           "user": {
             "type": "object",
@@ -2592,6 +2576,102 @@
                   }
                 }
               },
+              "emotions": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": {
+                      "type": "number"
+                    },
+                    "documentId": {
+                      "type": "string"
+                    },
+                    "emotions": {
+                      "type": "string",
+                      "enum": [
+                        "ANGRY",
+                        "SAD",
+                        "CALM",
+                        "WORRIED",
+                        "HAPPY",
+                        "EMBARRASSED",
+                        "UNCOMFORTABLE",
+                        "CONFUSED",
+                        "BORED",
+                        "EXCITED",
+                        "RELAXED"
+                      ]
+                    },
+                    "emotionDay": {
+                      "type": "string",
+                      "format": "date"
+                    },
+                    "user": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "createdAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "updatedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "publishedAt": {
+                      "type": "string",
+                      "format": "date-time"
+                    },
+                    "createdBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "updatedBy": {
+                      "type": "object",
+                      "properties": {
+                        "id": {
+                          "type": "number"
+                        },
+                        "documentId": {
+                          "type": "string"
+                        }
+                      }
+                    },
+                    "locale": {
+                      "type": "string"
+                    },
+                    "localizations": {
+                      "type": "array",
+                      "items": {
+                        "type": "object",
+                        "properties": {
+                          "id": {
+                            "type": "number"
+                          },
+                          "documentId": {
+                            "type": "string"
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              },
               "createdAt": {
                 "type": "string",
                 "format": "date-time"
@@ -2692,95 +2772,6 @@
                 },
                 "documentId": {
                   "type": "string"
-                },
-                "emotions": {
-                  "type": "string",
-                  "enum": [
-                    "ANGRY",
-                    "SAD",
-                    "CALM",
-                    "WORRIED",
-                    "HAPPY",
-                    "EMBARRASSED",
-                    "UNCOMFORTABLE",
-                    "CONFUSED",
-                    "BORED",
-                    "EXCITED",
-                    "RELAXED"
-                  ]
-                },
-                "createdOn": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "updatedOn": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "entry": {
-                  "type": "string"
-                },
-                "user": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "createdAt": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "updatedAt": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "publishedAt": {
-                  "type": "string",
-                  "format": "date-time"
-                },
-                "createdBy": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "updatedBy": {
-                  "type": "object",
-                  "properties": {
-                    "id": {
-                      "type": "number"
-                    },
-                    "documentId": {
-                      "type": "string"
-                    }
-                  }
-                },
-                "locale": {
-                  "type": "string"
-                },
-                "localizations": {
-                  "type": "array",
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "id": {
-                        "type": "number"
-                      },
-                      "documentId": {
-                        "type": "string"
-                      }
-                    }
-                  }
                 }
               }
             }

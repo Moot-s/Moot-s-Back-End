@@ -4,10 +4,11 @@
   "info": {
     "singularName": "emotion",
     "pluralName": "emotions",
-    "displayName": "Emotion"
+    "displayName": "Emotion",
+    "description": ""
   },
   "options": {
-    "draftAndPublish": true
+    "draftAndPublish": false
   },
   "attributes": {
     "emotions": {
@@ -27,15 +28,8 @@
       ],
       "required": true
     },
-    "createdOn": {
-      "type": "datetime",
-      "required": true
-    },
-    "updatedOn": {
-      "type": "datetime"
-    },
-    "entry": {
-      "type": "uid",
+    "emotionDay": {
+      "type": "date",
       "required": true
     },
     "user": {

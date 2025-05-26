@@ -372,18 +372,19 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
 export interface ApiEmotionEmotion extends Struct.CollectionTypeSchema {
   collectionName: 'emotions';
   info: {
+    description: '';
     displayName: 'Emotion';
     pluralName: 'emotions';
     singularName: 'emotion';
   };
   options: {
-    draftAndPublish: true;
+    draftAndPublish: false;
   };
   attributes: {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    createdOn: Schema.Attribute.DateTime & Schema.Attribute.Required;
+    emotionDay: Schema.Attribute.Date & Schema.Attribute.Required;
     emotions: Schema.Attribute.Enumeration<
       [
         'ANGRY',
@@ -400,7 +401,6 @@ export interface ApiEmotionEmotion extends Struct.CollectionTypeSchema {
       ]
     > &
       Schema.Attribute.Required;
-    entry: Schema.Attribute.UID & Schema.Attribute.Required;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -411,7 +411,6 @@ export interface ApiEmotionEmotion extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    updatedOn: Schema.Attribute.DateTime;
     user: Schema.Attribute.Relation<
       'oneToOne',
       'plugin::users-permissions.user'
@@ -874,7 +873,6 @@ export interface PluginUsersPermissionsUser
   };
   options: {
     draftAndPublish: false;
-    timestamps: true;
   };
   attributes: {
     blocked: Schema.Attribute.Boolean & Schema.Attribute.DefaultTo<false>;
@@ -888,6 +886,7 @@ export interface PluginUsersPermissionsUser
       Schema.Attribute.SetMinMaxLength<{
         minLength: 6;
       }>;
+    emotions: Schema.Attribute.Relation<'oneToMany', 'api::emotion.emotion'>;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
