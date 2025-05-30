@@ -14,7 +14,7 @@
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
     },
-    "x-generation-date": "2025-05-26T16:04:15.654Z"
+    "x-generation-date": "2025-05-30T09:04:24.808Z"
   },
   "x-strapi-config": {
     "plugins": [
@@ -2013,16 +2013,16 @@
                 "type": "string",
                 "enum": [
                   "ANGRY",
-                  "SAD",
-                  "CALM",
-                  "WORRIED",
-                  "HAPPY",
-                  "EMBARRASSED",
-                  "UNCOMFORTABLE",
-                  "CONFUSED",
                   "BORED",
+                  "CALM",
+                  "CONFUSED",
+                  "EMBARRASSED",
                   "EXCITED",
-                  "RELAXED"
+                  "HAPPY",
+                  "SAD",
+                  "SURPRISED",
+                  "UNCOMFORTABLE",
+                  "WORRIED"
                 ]
               },
               "emotionDay": {
@@ -2113,16 +2113,16 @@
             "type": "string",
             "enum": [
               "ANGRY",
-              "SAD",
-              "CALM",
-              "WORRIED",
-              "HAPPY",
-              "EMBARRASSED",
-              "UNCOMFORTABLE",
-              "CONFUSED",
               "BORED",
+              "CALM",
+              "CONFUSED",
+              "EMBARRASSED",
               "EXCITED",
-              "RELAXED"
+              "HAPPY",
+              "SAD",
+              "SURPRISED",
+              "UNCOMFORTABLE",
+              "WORRIED"
             ]
           },
           "emotionDay": {
@@ -2591,16 +2591,16 @@
                       "type": "string",
                       "enum": [
                         "ANGRY",
-                        "SAD",
-                        "CALM",
-                        "WORRIED",
-                        "HAPPY",
-                        "EMBARRASSED",
-                        "UNCOMFORTABLE",
-                        "CONFUSED",
                         "BORED",
+                        "CALM",
+                        "CONFUSED",
+                        "EMBARRASSED",
                         "EXCITED",
-                        "RELAXED"
+                        "HAPPY",
+                        "SAD",
+                        "SURPRISED",
+                        "UNCOMFORTABLE",
+                        "WORRIED"
                       ]
                     },
                     "emotionDay": {

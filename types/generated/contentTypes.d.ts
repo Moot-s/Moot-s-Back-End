@@ -388,16 +388,16 @@ export interface ApiEmotionEmotion extends Struct.CollectionTypeSchema {
     emotions: Schema.Attribute.Enumeration<
       [
         'ANGRY',
-        'SAD',
-        'CALM',
-        'WORRIED',
-        'HAPPY',
-        'EMBARRASSED',
-        'UNCOMFORTABLE',
-        'CONFUSED',
         'BORED',
+        'CALM',
+        'CONFUSED',
+        'EMBARRASSED',
         'EXCITED',
-        'RELAXED',
+        'HAPPY',
+        'SAD',
+        'SURPRISED',
+        'UNCOMFORTABLE',
+        'WORRIED',
       ]
     > &
       Schema.Attribute.Required;

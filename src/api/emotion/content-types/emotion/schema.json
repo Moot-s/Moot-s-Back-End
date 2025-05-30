@@ -15,16 +15,16 @@
       "type": "enumeration",
       "enum": [
         "ANGRY",
-        "SAD",
-        "CALM",
-        "WORRIED",
-        "HAPPY",
-        "EMBARRASSED",
-        "UNCOMFORTABLE",
-        "CONFUSED",
         "BORED",
+        "CALM",
+        "CONFUSED",
+        "EMBARRASSED",
         "EXCITED",
-        "RELAXED"
+        "HAPPY",
+        "SAD",
+        "SURPRISED",
+        "UNCOMFORTABLE",
+        "WORRIED"
       ],
       "required": true
     },
