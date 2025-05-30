@@ -1,0 +1,41 @@
+{
+  "kind": "collectionType",
+  "collectionName": "emotions",
+  "info": {
+    "singularName": "emotion",
+    "pluralName": "emotions",
+    "displayName": "Emotion",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "attributes": {
+    "emotions": {
+      "type": "enumeration",
+      "enum": [
+        "ANGRY",
+        "BORED",
+        "CALM",
+        "CONFUSED",
+        "EMBARRASSED",
+        "EXCITED",
+        "HAPPY",
+        "SAD",
+        "SURPRISED",
+        "UNCOMFORTABLE",
+        "WORRIED"
+      ],
+      "required": true
+    },
+    "emotionDay": {
+      "type": "date",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "plugin::users-permissions.user"
+    }
+  }
+}
